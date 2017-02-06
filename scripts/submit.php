@@ -1,11 +1,11 @@
 <?php
-if( isset($_POST['token']) ) {
+if( isset($_POST['token'])) {
 
     if ($_POST['token'] != 'vh5qxkuKDH0bdL29y19Z') {
         die("incorrect token");
     }
     if (!isset($_POST['title'])) {
-            die("missing title");
+            die("missing title") ;
         } else if ($_POST['title'] == "") {
            die("missing title");
         }
@@ -20,11 +20,10 @@ if( isset($_POST['token']) ) {
     $password = "MPoppy123";
     $dbname = "ding4me";
 
-
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
-    if ($conn->connect_error) {
+    if ( $conn->connect_error ) {
         die("Connection failed: " . $conn->connect_error);
     }
 
@@ -39,7 +38,7 @@ if( isset($_POST['token']) ) {
     $sql = "INSERT post (title, subtitle, content)
     VALUES ('$post_title','$post_subtitle', '$post_content')";
 
-    if ($conn->query($sql) === TRUE) {
+    if ($ conn->query($sql) === TRUE) {
         echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
