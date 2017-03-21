@@ -8,7 +8,7 @@
     $username = "blopit";
     $password = "MPoppy123";
     $dbname = "ding4me";
-    $pageIndex = $page * 4;
+    $pageIndex = $page * 1;
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,7 +17,7 @@
         die( "Connection failed: " . $conn->connect_error );
     }
 
-    $sql = "SELECT * FROM post WHERE id < 10000 ORDER BY id DESC LIMIT " . $pageIndex . ",4";
+    $sql = "SELECT * FROM post WHERE id < 10000 ORDER BY id DESC LIMIT " . $pageIndex . ",1";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -27,7 +27,7 @@
                 'createdAt' => $row['createdAt'],
                 'title' => $row['title'],
                 'subtitle' => $row['subtitle'],
-                'content ' => $row['content']
+                'content' => $row['content']
             );
         }
         $jsonstring = json_encode($json);
