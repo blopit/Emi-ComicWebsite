@@ -1,10 +1,6 @@
 var currentIndex = -1;
 var limit = false;
-
-
-$(document).ready(function() {
-
-});
+var offset = $("#sidebar-container").offset();
 
 $( document ).ready(function() {
     getOutput();
@@ -18,7 +14,6 @@ $("#show-nav").click(function () {
 function createElementsFromJSON(json, parent) {
     for (var i in json) {
         var object = json[i];
-        console.log(object);
 
         var container = document.getElementById('');
 
@@ -37,7 +32,6 @@ function getOutput() {
     $.ajax({
         url: 'scripts/get.php?page=' + currentIndex,
         complete: function (response) {
-            console.log(response.responseText);
             if (response.responseText !== '0 results') {
 
                 var json = JSON.parse(response.responseText);
@@ -56,13 +50,28 @@ function getOutput() {
 
 function checkShouldLoad() {
     if($(window).scrollTop() + $(window).height() > $(document).height() - 100 && !limit) {
-        getOutput()
+        getOutput();
     }
 }
 
 $(window).scroll(function() {
-    checkShouldLoad()
+    checkShouldLoad();
 });
 
+// extension:
+$.fn.scrollEnd = function(callback, timeout) {
+    $(this).scroll(function(){
+        var $this = $(this);
+        if ($this.data('scrollTimeout')) {
+            clearTimeout($this.data('scrollTimeout'));
+        }
+        $this.data('scrollTimeout', setTimeout(callback,timeout));
+    });
+};
 
+$(window).scrollEnd(function(){
+    var offset = $('#sidebar-container').parent().offset().top;
+    var top = Math.max($(document).scrollTop()-offset, 0);
+    $("#sidebar-container").css({top:top});
+}, 1000);
 

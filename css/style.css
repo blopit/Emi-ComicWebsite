@@ -70,6 +70,9 @@ i {
     flex: 3;
     padding: 10px;
     margin-top: 14px;
+    position: relative;
+    transition: top 1s;
+    -webkit-transition: top 1s;
 }
 
 .post-title {
@@ -81,7 +84,6 @@ i {
     padding: 10px 24px 24px;
     margin: 24px 0px;
 }
-
 
 /*
 uncomment for some weird shit
@@ -110,9 +112,9 @@ uncomment for some weird shit
     width: 30%;
     background: #d0514f; /* Old browsers */
     background: -moz-linear-gradient(left, transparent 0%, #d0514f 10%, #d0514f 90%, transparent 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, transparent 0%,#d0514f 10%,#d0514f 90%,transparent 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, transparent 0%,#d0514f 10%,#d0514f 90%,transparent 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0514f', endColorstr='#d0514f',GradientType=1 ); /* IE6-9 */
+    background: -webkit-linear-gradient(left, transparent 0%, #d0514f 10%, #d0514f 90%, transparent 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, transparent 0%, #d0514f 10%, #d0514f 90%, transparent 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d0514f', endColorstr='#d0514f', GradientType=1); /* IE6-9 */
 }
 
 .shadow {
@@ -170,9 +172,8 @@ footer {
 }
 
 .sticky {
-    /*position: fixed;*/
-    top: 0px;
-    right: 0px;
+    position: fixed;
+    top: 0;
 }
 
 .hide {
