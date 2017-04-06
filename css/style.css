@@ -10,6 +10,61 @@ font-family: 'Gloria Hallelujah', cursive;
 font-family: 'Indie Flower', cursive;
 */
 
+/***************** MOBILE NAV STYLES ********************/
+
+@media  (max-width: 768px) {
+  #nav {
+      height: 45px;
+      background-color: navy;
+  }
+
+  #navbar {
+      width: 75%;
+      background-color: #89AF9D;
+      margin: 0 auto;
+  }
+
+  #navbar > div > ul {
+    display: none;
+  }
+
+  #navbar #show-nav {
+    display: block;
+  }
+  #navbar > div > ul > li {
+      border: none;
+      background-color: black;
+      text-align: center;
+      width: 85%;
+      margin: 10px auto;
+  }
+
+  #navbar div ul li a {
+      color: white;
+  }
+
+  #navbar div ul li a:hover {
+      border-radius: 0;
+
+  }
+  #navbar .nav {
+    width: 90% !important;
+    margin: 40px auto 8px !important;
+  }
+  #navbar .nav li a {
+    float: none !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
+  .fa-bars {
+    width: 100%;
+    line-height:20px;
+  }
+}
+
+
+
 body {
     background-color: #BDD0B0;
     background-image: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, .35) 50%);
@@ -28,35 +83,33 @@ i {
     color: white;
     float: right;
     padding: 10px;
+}
+
+
+
+
+#show-nav {
+  display: none;
+}
+
+#navbar .nav {
+  width: 72%;
+  margin: 0 auto;
 
 }
 
-#nav {
-    height: 45px;
-    background-color: navy;
+#navbar .nav li a {
+  float: left;
+  background-color: black;
+  color: white;
+  width: 22%;
+  text-align: center;
+  margin: 0 0 0 14px;
 }
 
-#navbar {
-    width: 75%;
-    background-color: #89AF9D;
-    margin: 0 auto;
-}
-
-#navbar > div > ul > li {
-    border: none;
-    background-color: black;
-    text-align: center;
-    width: 85%;
-    margin: 10px auto;
-}
-
-#navbar div ul li a {
-    color: white;
-}
-
-#navbar div ul li a:hover {
-    border-radius: 0;
-    color: blue;
+#navbar .nav li a:hover {
+  background-color: #E4E7CC;
+  color: black;
 }
 
 #post-container {
@@ -180,7 +233,10 @@ footer {
     display: none;
 }
 
-@media only screen and (min-width: 768px) {
+
+
+
+@media (min-width: 768px) {
     .post {
         padding: 1px 9px 6px;
         float: left;
@@ -193,6 +249,12 @@ footer {
     #sidebar-md a {
         margin-left: 10px;
     }
+    #navbar .nav {
+      background-color:#89AF9D;
+      padding: 10px 0;
+    }
+
+
 }
 
 @keyframes squigglevision {
